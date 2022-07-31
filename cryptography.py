@@ -34,7 +34,7 @@ def main():
                 no=int(input("Enter the Encryption key (1-10) : "))
                 print(decrypt(string,no))
             else:
-                print("Wrong input, Try again")
+                print("Wrong input. Try again...")
                 continue
             check=int(input("Enter 0 to exit, anything else to continue : "))
 
