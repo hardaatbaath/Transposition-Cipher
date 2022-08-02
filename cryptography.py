@@ -1,7 +1,8 @@
 import math
+
+#Encrypts message
 def split_len(seq, key):
     final=""
-    
     seq+=((key-(len(seq)%key))*" ")
     a=[seq[i:i + key] for i in range(0, len(seq), key)]
     for i in range(key):
@@ -9,13 +10,13 @@ def split_len(seq, key):
             final+=str(a[j][i])
     return final+'.'
 
+# Decrypts message
 def decrypt(message,key):
     ans=""
     message=message[:len(message)-2]
     if(message[len(message)-1]==' '):
         message=message[:len(message)-2]
     for i in range(len(message)):
-        # ans+=message[((key+1)*i)%len(message)]
         ans+=message[(math.ceil((len(message))/key)*i)%len(message)]
         i+=1
     return ans
